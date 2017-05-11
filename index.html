@@ -1,1 +1,884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-05-11 Thu 14:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intro to org-mode</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Marie-Helene Burle" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style type="text/css">
+<!--/*--><![CDATA[/*><!--*/
+@media all
+{
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  font-family: 'PT Sans', sans-serif;
+}
+pre,
+code {
+  font-family: 'Inconsolata', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+}
+html {
+  background-color: #eee8d5;
+  color: #4e5e65;
+  margin: 1em;
+}
+body {
+  background-color: #faf9f1;
+  margin: 0 auto;
+  max-width: 23cm;
+  border: 1pt solid #93a1a1;
+  padding: 1em;
+}
+code {
+  background-color: #eee8d5;
+  padding: 2px;
+}
+a {
+  color: #b58900;
+}
+a:visited {
+  color: #cb4b16;
+}
+a:hover {
+  color: #e65719;
+}
+h1 {
+  color: #890c0c;
+}
+h2 {
+  color: #094043;
+}
+h3 {
+  color: #0e6569;
+}
+h4 {
+  color: #15969d;
+}
+h5,
+h6 {
+  color: #313f46;
+}
+pre {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1pt solid #93a1a1;
+  padding: 1em;
+  box-shadow: 5pt 5pt 8pt #eee8d5;
+}
+pre code {
+  background-color: #faf9f1;
+}
+h1 {
+  font-size: 2.6em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.2em;
+}
+h4 {
+  font-size: 1.1em;
+}
+h5 {
+  font-size: 0.9em;
+}
+h6 {
+  font-size: 1.1em;
+}
+.tag {
+  background-color: #eee8d5;
+  color: #d33682;
+  padding: 0 0.2em;
+}
+.todo,
+.next,
+.done {
+  color: #faf9f1;
+  background-color: #dc322f;
+  padding: 0 0.2em;
+}
+.tag {
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  border-radius: 0.35em;
+}
+.TODO {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #2aa198;
+}
+.NEXT {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #268bd2;
+}
+.ACTIVE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #268bd2;
+}
+.DONE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #859900;
+}
+.WAITING {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #cb4b16;
+}
+.HOLD {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #d33682;
+}
+.NOTE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #d33682;
+}
+.CANCELLED {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #859900;
+}
+
+ /* TOC inspired by http://jashkenas.github.com/coffee-script */
+  #table-of-contents {
+    font-size: 10pt;
+    position: fixed;
+    right: 0em;
+    top: 0em;
+    background: #faf9f1;
+    color: #435156;
+    -webkit-box-shadow: 0 0 1em #777777;
+    -moz-box-shadow: 0 0 1em #777777;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    text-align: right;
+    /* ensure doesn't flow off the screen when expanded */
+    max-height: 80%;
+    overflow: auto; }
+    #table-of-contents h2 {
+      font-size: 10pt;
+      max-width: 8em;
+      font-weight: normal;
+      padding-left: 0.5em;
+      padding-left: 0.5em;
+      padding-top: 0.05em;
+      padding-bottom: 0.05em; }
+    #table-of-contents #text-table-of-contents {
+      display: none;
+      text-align: left; }
+    #table-of-contents:hover #text-table-of-contents {
+      display: block;
+      padding: 0.5em;
+      margin-top: -1.5em; }
+    
+  .rss_box {}
+  .rss_title, rss_title a {}
+  .rss_items {}
+  .rss_item a:link, .rss_item a:visited, .rss_item a:active {}
+  .rss_item a:hover {}
+  .rss_date {}
+
+} /* END OF @media all */
+
+
+@media screen
+{
+  #table-of-contents {
+    float: right;
+    border: 1px solid #CCC;
+    max-width: 35%;
+    overflow: auto;
+  }
+} /* END OF @media screen */
+/*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Intro to org-mode</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0f4cf71">Installation</a></li>
+<li><a href="#org4885904">What is org mode?</a></li>
+<li><a href="#org6763867">Demo of some of org mode's uses</a></li>
+<li><a href="#org24f07b6">Basics of org mode</a></li>
+<li><a href="#orga63e0e6">Header structure</a>
+<ul>
+<li><a href="#orge990911">Challenge 1</a></li>
+</ul>
+</li>
+<li><a href="#org0ed1c7b">Lists</a>
+<ul>
+<li><a href="#org87ddcf1">Challenge 2</a></li>
+</ul>
+</li>
+<li><a href="#org557efa4">Exporting</a></li>
+<li><a href="#org09a6bb5">Code blocks</a></li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="meta">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>Marie-Helene Burle</b></td>
+</tr>
+
+<tr>
+<td class="org-left">May 11, 2017</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org0f4cf71" class="outline-2">
+<h2 id="org0f4cf71">Installation</h2>
+<div class="outline-text-2" id="text-org0f4cf71">
+<p>
+You need emacs (see <a href="https://prosoitos.github.io/workshop_intro-to-emacs/">https://prosoitos.github.io/workshop_intro-to-emacs/</a> for installation).
+</p>
+
+<p>
+org-mode comes with emacs so you don't need to install anything else.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4885904" class="outline-2">
+<h2 id="org4885904">What is org mode?</h2>
+<div class="outline-text-2" id="text-org4885904">
+<p>
+Org mode is an emacs major mode associated with ".org" files.
+</p>
+
+<p>
+It allows great functionalities to:
+</p>
+
+<ul class="org-ul">
+<li>create drafts and plays with ideas</li>
+<li>lists</li>
+<li>agenda</li>
+<li>todos</li>
+<li>managing time</li>
+<li>notes</li>
+<li>literate programming</li>
+<li>thesis, papers or books</li>
+<li>more&#x2026;</li>
+</ul>
+
+<p>
+It started as a package for emacs created by Carsten Dominik in 2003. It enjoyed a huge popularity so that it is now part of emacs by default. It is currently maintained by Bastien Guerry and it keeps being developed constantly by a hord of poeple.
+</p>
+
+<p>
+In one hour, I will only barely be scratching the surface of org mode's capabilities. For more information, check its manual: <a href="http://orgmode.org/manual/">http://orgmode.org/manual/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6763867" class="outline-2">
+<h2 id="org6763867">Demo of some of org mode's uses</h2>
+<div class="outline-text-2" id="text-org6763867">
+<p>
+I will very quickly show you a few of the things that I do in org mode.
+</p>
+
+<p>
+and now&#x2026;
+</p>
+
+<br>
+
+<p>
+<font size="6">Let's play with org mode!!!</font>
+</p>
+
+<br>
+</div>
+</div>
+
+<div id="outline-container-org24f07b6" class="outline-2">
+<h2 id="org24f07b6">Basics of org mode</h2>
+<div class="outline-text-2" id="text-org24f07b6">
+<pre class="example">
+------------------------------------------------------------
+Reminder from the intro to emacs workshop:
+C = control
+M = meta (alt)
+S = shift
+C-c means "press control and the letter c at the same time"
+C-c C-x means "press control-c THEN control x"
+------------------------------------------------------------
+</pre>
+
+<p>
+Emacs has a lot of commands starting with C-x C- (e.g. C-x C-f "find" file, C-x C-s "save" file).
+</p>
+
+<p>
+Similarly, org mode has a lot of commands starting with C-c C-
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga63e0e6" class="outline-2">
+<h2 id="orga63e0e6">Header structure</h2>
+<div class="outline-text-2" id="text-orga63e0e6">
+<pre class="example">
+*_Header 1
+**_Header 2
+***_Header 3
+</pre>
+
+<p>
+These various headers can easily be promoted, demoted, alone or with their entire subtree, moved up or down and their content can be shown or collapsed&#x2026; amongst many other things.
+</p>
+
+<pre class="example">
+M-&lt;RET&gt;       create new heading just below
+C-&lt;RET&gt;       create new heading at the end of the section
+TAB right after this will move this new heading at levels above and below its current level
+TAB otherwise cycles through the various states of visibility
+M-&lt;left&gt;      promote one header
+M-&lt;right&gt;     demote one header
+M-S-&lt;left&gt;    promote header and its tree
+M-S-&lt;right&gt;   demote header and its subtree
+M-S-&lt;up&gt;      move header up
+M-S-&lt;down&gt;    move header down
+</pre>
+</div>
+
+<div id="outline-container-orge990911" class="outline-3">
+<h3 id="orge990911">Challenge 1</h3>
+<div class="outline-text-3" id="text-orge990911">
+<pre class="example">
+You are creating a draft for a project and playing with ideas...
+
+First, you will find (create) an org file anywhere on your computer (I will help people who were not here for the intro to emacs workshop).
+
+And you name it "my-draft.org" and write (save) it.
+
+------------------------------------------
+Reminder from the intro to emacs workshop:
+C-x C-f to find a file
+C-x C-s to write a file
+------------------------------------------
+
+Then you create 3 main points called: "Idea 1", "Idea 2" and "Idea 3" and you type a few words in each section.
+
+You change your mind and decide that "Idea 3" should in fact come before "Idea 2".
+
+You add 2 sublevels for "Idea 1" called "Thought a" and "Thought b" and you type a few words in those as well.
+
+In "Thought a", you create 4 sublevels that you call "Argument 1", "Argument 2", "Argument 3" and "Argument 4".
+
+You change your mind again and decide that "Thought a" should become an additional main point (so you will promote it to a first header), while "Argument 3" and "Argument 4" should now become sublevels of "Argument 1" (do not use kill and yank for this. Think how you can very easily do this using org mode headings' functionalities).
+
+You change your mind one last time (drafting and playing with ideas is made of a lot of that!) and decide that "Thought a" and its sublevels should become a subtree of "Idea 3"
+
+Finally, cycle through the various visibility (only the overview, the whole tree structure or everything).
+</pre>
+
+<p>
+There are also commands to kill, copy, yank, duplicate, etc. sections or headers with their entire subtrees. Others to jump around from one header to another. And so many more.
+</p>
+
+<p>
+You can have a look here for more information: <a href="http://orgmode.org/manual/Structure-editing.html#Structure-editing">http://orgmode.org/manual/Structure-editing.html#Structure-editing</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0ed1c7b" class="outline-2">
+<h2 id="org0ed1c7b">Lists</h2>
+<div class="outline-text-2" id="text-org0ed1c7b">
+<p>
+Starting a line with "-", "+" or a number/letter followed by "." or ")"  will start a list. New items can be added with M-&lt;RET&gt; and all items can also be easily moved up/down, promoted/demoted, renumbered, have their list type changed (from "-" to numbers or letters) and so much more.
+</p>
+
+<p>
+Have a look here for more information on lists: <a href="http://orgmode.org/manual/Plain-lists.html">http://orgmode.org/manual/Plain-lists.html</a>
+</p>
+</div>
+
+<div id="outline-container-org87ddcf1" class="outline-3">
+<h3 id="org87ddcf1">Challenge 2</h3>
+<div class="outline-text-3" id="text-org87ddcf1">
+<pre class="example">
+Using the link above for a list of keybindings, add a few list items in one section of my-draft.org and play with various commands (move your list items around, make subitems, etc.).
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org557efa4" class="outline-2">
+<h2 id="org557efa4">Exporting</h2>
+<div class="outline-text-2" id="text-org557efa4">
+<p>
+Documents created in org mode can be exported in all sorts of formats (latex and then pdf, html, etc).
+</p>
+
+<pre class="example">
+To open the exporter, type:
+
+C-c C-e
+
+(The usual C-c org mode command and C-e as in "export")
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org09a6bb5" class="outline-2">
+<h2 id="org09a6bb5">Code blocks</h2>
+<div class="outline-text-2" id="text-org09a6bb5">
+<p>
+Code blocks of many languages can be inserted in org mode for literate programming.
+</p>
+
+<pre class="example">
+This is what an R code block looks like for instance:
+
+
+
+#+BEGIN_SRC R
+
+adult_dotplot &lt;-
+    ggplot(adult, aes(mass))+
+    geom_dotplot()+
+    ggtitle("Mass of adult Tuamotu Sandpipers")+
+    xlab("Mass (g)")+
+    theme_classic()
+
+adult_dotplot
+
+#+END_SRC
+
+
+
+(of course there are snippets that make it as easy as 2 keystrokes to create the codeblock start and end lines).
+
+Codeblocks can be executed and you have a lot of control about what is exported when you covert your code to pdf, html, etc. (the code alone or the code and its output or just the output or nothing at all, etc.). 
+
+This is very similar to RMarkdown. Except that you can also embed latex codes, python codes, html codes, etc. And you can enjoy the endless functionalities of org mode...
+</pre>
+
+<br>
+<br>
+
+<p>
+<div style="font-size: 90%; background-color: #eee8d5; border: 1pt solid #93a1a1">This page was created using a modified version of a css style by Thomas Frössman (itself based on the solarized color theme from Ethan Schoonover), as well as parts of a modified version of the worg css stylesheet for the table of contents</div>
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
