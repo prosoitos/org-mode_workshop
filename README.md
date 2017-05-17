@@ -3,12 +3,9 @@
 
 ### Description
 
-Org-mode is a package initially developed by Carsten Dominik in 2003. Its popularity was huge and many people took over the developping of the package into something more and more sophisticated. It is now part of emacs by default.
+Org-mode is an emacs package initially developed by Carsten Dominik in 2003. Its popularity is huge and many people have taken over its development, building it into something more and more sophisticated and fantastic. It is now part of emacs by default.
 
 This workshop will introduce you to some of the many functionalities of this **really awesome and really useful** tool.
-
-### So what is org-mode?
-
 
 
 ### Time and place
@@ -21,7 +18,7 @@ This workshop will introduce you to some of the many functionalities of this **r
 ### Installation
 
 You will need to have emacs installed on your machine. For instructions, see https://github.com/prosoitos/workshop_intro-to-emacs.  
-Org-mode comes with emacs, so you have nothing else to install for this workshop.
+Org-mode comes with emacs, so you don't have anything else to install for this workshop.
 
 
 ### Workshop information
