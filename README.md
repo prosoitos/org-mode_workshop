@@ -5,6 +5,20 @@
 
 Org-mode is an emacs package initially developed by Carsten Dominik in 2003. Its popularity is huge and many people have taken over its development, building it into something more and more sophisticated and fantastic. It is now part of emacs by default.
 
+It allows great functionalities to:
+
+- create drafts and play with ideas
+- literate programming
+- manage:
+    - lists
+    - todos
+    - time
+    - agenda
+- take notes
+- write thesis, papers or books
+- spreadsheet
+- more...
+
 This workshop will introduce you to some of the many functionalities of this **really awesome and really useful** tool.
 
 
