@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-11 Thu 14:41 -->
+<!-- 2017-05-18 Thu 10:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intro to org-mode</title>
@@ -390,10 +390,10 @@ h2 {
   color: #094043;
 }
 h3 {
-  color: #0e6569;
+  color: #128187;
 }
 h4 {
-  color: #15969d;
+  color: #9d9d15;
 }
 h5,
 h6 {
@@ -416,10 +416,10 @@ h2 {
   font-size: 1.5em;
 }
 h3 {
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 h4 {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 h5 {
   font-size: 0.9em;
@@ -600,22 +600,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0f4cf71">Installation</a></li>
-<li><a href="#org4885904">What is org mode?</a></li>
-<li><a href="#org6763867">Demo of some of org mode's uses</a></li>
-<li><a href="#org24f07b6">Basics of org mode</a></li>
-<li><a href="#orga63e0e6">Header structure</a>
+<li><a href="#orgdfd4cff">Installation</a></li>
+<li><a href="#org7e73f6e">What is org mode?</a></li>
+<li><a href="#org84cbdec">Demo of some of org mode's uses</a></li>
+<li><a href="#org61e3990">Basics of org mode</a></li>
+<li><a href="#orgcbd6efa">Header structure</a>
 <ul>
-<li><a href="#orge990911">Challenge 1</a></li>
+<li><a href="#orgee54ab1">Challenge 1</a></li>
 </ul>
 </li>
-<li><a href="#org0ed1c7b">Lists</a>
+<li><a href="#org84d1503">Lists</a>
 <ul>
-<li><a href="#org87ddcf1">Challenge 2</a></li>
+<li><a href="#org49f23b3">Challenge 2</a></li>
 </ul>
 </li>
-<li><a href="#org557efa4">Exporting</a></li>
-<li><a href="#org09a6bb5">Code blocks</a></li>
+<li><a href="#orge37f4ac">Tables</a></li>
+<li><a href="#org98bc04f">Exporting</a></li>
+<li><a href="#org428a8b3">Code blocks</a></li>
 </ul>
 </div>
 </div>
@@ -632,70 +633,91 @@ for the JavaScript code in this tag.
 </tr>
 
 <tr>
-<td class="org-left">May 11, 2017</td>
+<td class="org-left">May 18, 2017</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div id="outline-container-org0f4cf71" class="outline-2">
-<h2 id="org0f4cf71">Installation</h2>
-<div class="outline-text-2" id="text-org0f4cf71">
+<br>
+
+<div id="outline-container-orgdfd4cff" class="outline-2">
+<h2 id="orgdfd4cff">Installation</h2>
+<div class="outline-text-2" id="text-orgdfd4cff">
 <p>
 You need emacs (see <a href="https://prosoitos.github.io/workshop_intro-to-emacs/">https://prosoitos.github.io/workshop_intro-to-emacs/</a> for installation).
 </p>
 
 <p>
-org-mode comes with emacs so you don't need to install anything else.
+Org-mode comes with emacs so you don't need to install anything else.
 </p>
+
+<br>
 </div>
 </div>
 
-<div id="outline-container-org4885904" class="outline-2">
-<h2 id="org4885904">What is org mode?</h2>
-<div class="outline-text-2" id="text-org4885904">
+<div id="outline-container-org7e73f6e" class="outline-2">
+<h2 id="org7e73f6e">What is org mode?</h2>
+<div class="outline-text-2" id="text-org7e73f6e">
 <p>
-Org mode is an emacs major mode associated with ".org" files.
+Org is an emacs major mode created by Carsten Dominik in 2003 and currently maintained by Bastien Guerry. It enjoys a huge popularity and hordes of developers keep growing it into a more and more powerful tool.
 </p>
 
 <p>
-It allows great functionalities to:
+Here is a great description from <a href="http://orgmode.org/manual/Summary.html">http://orgmode.org/manual/Summary.html</a>:
 </p>
 
-<ul class="org-ul">
-<li>create drafts and plays with ideas</li>
-<li>lists</li>
-<li>agenda</li>
-<li>todos</li>
-<li>managing time</li>
-<li>notes</li>
-<li>literate programming</li>
-<li>thesis, papers or books</li>
-<li>more&#x2026;</li>
-</ul>
-
+<blockquote>
 <p>
-It started as a package for emacs created by Carsten Dominik in 2003. It enjoyed a huge popularity so that it is now part of emacs by default. It is currently maintained by Bastien Guerry and it keeps being developed constantly by a hord of poeple.
+<div align="justify">"Org is a mode for keeping notes, maintaining TODO lists, and project planning with a fast and effective plain-text system. It also is an authoring system with unique support for literate programming and reproducible research.
 </p>
 
 <p>
-In one hour, I will only barely be scratching the surface of org mode's capabilities. For more information, check its manual: <a href="http://orgmode.org/manual/">http://orgmode.org/manual/</a>
+Org is implemented on top of Outline mode, which makes it possible to keep the content of large files well structured. Visibility cycling and structure editing help to work with the tree. Tables are easily created with a built-in table editor. Plain text URL-like links connect to websites, emails, Usenet messages, BBDB entries, and any files related to the projects.
 </p>
+
+<p>
+Org develops organizational tasks around notes files that contain lists or information about projects as plain text. Project planning and task management makes use of metadata which is part of an outline node. Based on this data, specific entries can be extracted in queries and create dynamic agenda views that also integrate the Emacs calendar and diary. Org can be used to implement many different project planning schemes, such as David Allen's GTD system.
+</p>
+
+<p>
+Org files can serve as a single source authoring system with export to many different formats such as HTML, LaTeX, Open Document, and Markdown. New export backends can be derived from existing ones, or defined from scratch.
+</p>
+
+<p>
+Org files can include source code blocks, which makes Org uniquely suited for authoring technical documents with code examples. Org source code blocks are fully functional; they can be evaluated in place and their results can be captured in the file. This makes it possible to create a single file reproducible research compendium.
+</p>
+
+<p>
+Org keeps simple things simple. When first fired up, it should feel like a straightforward, easy to use outliner. Complexity is not imposed, but a large amount of functionality is available when needed. Org is a toolbox. Many users actually run only a (very personal) fraction of Org's capabilities, and know that there is more whenever they need it.
+</p>
+
+<p>
+All of this is achieved with strictly plain text files, the most portable and future-proof file format. Org runs in Emacs. Emacs is one of the most widely ported programs, so that Org mode is available on every major platform."</div>
+</p>
+</blockquote>
+
+
+<p>
+In one hour, I will barely scratch the surface of org-mode's capabilities. For more information, check its manual: <a href="http://orgmode.org/manual/">http://orgmode.org/manual/</a>. The good thing is that you can start taking advantage of its simple features right from the beginning.
+</p>
+
+<br>
 </div>
 </div>
 
-<div id="outline-container-org6763867" class="outline-2">
-<h2 id="org6763867">Demo of some of org mode's uses</h2>
-<div class="outline-text-2" id="text-org6763867">
+<div id="outline-container-org84cbdec" class="outline-2">
+<h2 id="org84cbdec">Demo of some of org mode's uses</h2>
+<div class="outline-text-2" id="text-org84cbdec">
 <p>
 I will very quickly show you a few of the things that I do in org mode.
 </p>
 
-<p>
-and now&#x2026;
-</p>
-
 <br>
+
+<p>
+And now&#x2026;
+</p>
 
 <p>
 <font size="6">Let's play with org mode!!!</font>
@@ -705,9 +727,9 @@ and now&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org24f07b6" class="outline-2">
-<h2 id="org24f07b6">Basics of org mode</h2>
-<div class="outline-text-2" id="text-org24f07b6">
+<div id="outline-container-org61e3990" class="outline-2">
+<h2 id="org61e3990">Basics of org mode</h2>
+<div class="outline-text-2" id="text-org61e3990">
 <pre class="example">
 ------------------------------------------------------------
 Reminder from the intro to emacs workshop:
@@ -720,18 +742,20 @@ C-c C-x means "press control-c THEN control x"
 </pre>
 
 <p>
-Emacs has a lot of commands starting with C-x C- (e.g. C-x C-f "find" file, C-x C-s "save" file).
+Emacs has a lot of commands starting with C-x C- (e.g. C-x C-f to "find" a file, C-x C-s to "save" a file, C-x C-c to "close" a session).
 </p>
 
 <p>
 Similarly, org mode has a lot of commands starting with C-c C-
 </p>
+
+<br>
 </div>
 </div>
 
-<div id="outline-container-orga63e0e6" class="outline-2">
-<h2 id="orga63e0e6">Header structure</h2>
-<div class="outline-text-2" id="text-orga63e0e6">
+<div id="outline-container-orgcbd6efa" class="outline-2">
+<h2 id="orgcbd6efa">Header structure</h2>
+<div class="outline-text-2" id="text-orgcbd6efa">
 <pre class="example">
 *_Header 1
 **_Header 2
@@ -754,11 +778,13 @@ M-S-&lt;right&gt;   demote header and its subtree
 M-S-&lt;up&gt;      move header up
 M-S-&lt;down&gt;    move header down
 </pre>
+
+<br>
 </div>
 
-<div id="outline-container-orge990911" class="outline-3">
-<h3 id="orge990911">Challenge 1</h3>
-<div class="outline-text-3" id="text-orge990911">
+<div id="outline-container-orgee54ab1" class="outline-3">
+<h3 id="orgee54ab1">Challenge 1</h3>
+<div class="outline-text-3" id="text-orgee54ab1">
 <pre class="example">
 You are creating a draft for a project and playing with ideas...
 
@@ -794,13 +820,15 @@ There are also commands to kill, copy, yank, duplicate, etc. sections or headers
 <p>
 You can have a look here for more information: <a href="http://orgmode.org/manual/Structure-editing.html#Structure-editing">http://orgmode.org/manual/Structure-editing.html#Structure-editing</a>
 </p>
+
+<br>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0ed1c7b" class="outline-2">
-<h2 id="org0ed1c7b">Lists</h2>
-<div class="outline-text-2" id="text-org0ed1c7b">
+<div id="outline-container-org84d1503" class="outline-2">
+<h2 id="org84d1503">Lists</h2>
+<div class="outline-text-2" id="text-org84d1503">
 <p>
 Starting a line with "-", "+" or a number/letter followed by "." or ")"  will start a list. New items can be added with M-&lt;RET&gt; and all items can also be easily moved up/down, promoted/demoted, renumbered, have their list type changed (from "-" to numbers or letters) and so much more.
 </p>
@@ -808,21 +836,60 @@ Starting a line with "-", "+" or a number/letter followed by "." or ")"  will st
 <p>
 Have a look here for more information on lists: <a href="http://orgmode.org/manual/Plain-lists.html">http://orgmode.org/manual/Plain-lists.html</a>
 </p>
+
+<br>
 </div>
 
-<div id="outline-container-org87ddcf1" class="outline-3">
-<h3 id="org87ddcf1">Challenge 2</h3>
-<div class="outline-text-3" id="text-org87ddcf1">
+<div id="outline-container-org49f23b3" class="outline-3">
+<h3 id="org49f23b3">Challenge 2</h3>
+<div class="outline-text-3" id="text-org49f23b3">
 <pre class="example">
 Using the link above for a list of keybindings, add a few list items in one section of my-draft.org and play with various commands (move your list items around, make subitems, etc.).
 </pre>
+
+<br>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org557efa4" class="outline-2">
-<h2 id="org557efa4">Exporting</h2>
-<div class="outline-text-2" id="text-org557efa4">
+<div id="outline-container-orge37f4ac" class="outline-2">
+<h2 id="orge37f4ac">Tables</h2>
+<div class="outline-text-2" id="text-orge37f4ac">
+<p>
+Playing with org tables could be a whole workshop in itself. For now, just know that they are beautiful, easy, powerful and can even be used as spreadsheets for basic operations.
+</p>
+
+<p>
+To give you a mini taste of what they look like, just type:
+</p>
+
+<pre class="example">
+|header1|header2|header3
+</pre>
+
+<p>
+and then
+</p>
+
+<pre class="example">
+C-c Ret
+</pre>
+
+<p>
+Et voilà!
+</p>
+
+<p>
+Now start filling in your table. TAB will move you horizontally and reformat the table while RET will move you vertically.
+</p>
+
+<br>
+</div>
+</div>
+
+<div id="outline-container-org98bc04f" class="outline-2">
+<h2 id="org98bc04f">Exporting</h2>
+<div class="outline-text-2" id="text-org98bc04f">
 <p>
 Documents created in org mode can be exported in all sorts of formats (latex and then pdf, html, etc).
 </p>
@@ -834,12 +901,14 @@ C-c C-e
 
 (The usual C-c org mode command and C-e as in "export")
 </pre>
+
+<br>
 </div>
 </div>
 
-<div id="outline-container-org09a6bb5" class="outline-2">
-<h2 id="org09a6bb5">Code blocks</h2>
-<div class="outline-text-2" id="text-org09a6bb5">
+<div id="outline-container-org428a8b3" class="outline-2">
+<h2 id="org428a8b3">Code blocks</h2>
+<div class="outline-text-2" id="text-org428a8b3">
 <p>
 Code blocks of many languages can be inserted in org mode for literate programming.
 </p>
