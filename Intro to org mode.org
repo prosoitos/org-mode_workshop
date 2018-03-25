@@ -40,6 +40,7 @@ Org keeps simple things simple. When first fired up, it should feel like a strai
 All of this is achieved with strictly plain text files, the most portable and future-proof file format. Org runs in Emacs. Emacs is one of the most widely ported programs, so that Org mode is available on every major platform."@@html:</div>@@
 #+END_QUOTE
 
+#+HTML: <br>
 
 In one hour, I will barely scratch the surface of org-mode's capabilities. For more information, check its manual: http://orgmode.org/manual/. The good thing is that you can start taking advantage of its simple features right from the beginning.
 
@@ -60,7 +61,6 @@ And now...
 * Basics of org mode
 
 #+BEGIN_EXAMPLE
----------------------------------------------------------------------------------------
 Reminders from the workshop "intro to emacs"
 
 Modifier keys:
@@ -73,7 +73,6 @@ e.g. "C-c" means "press control and the letter c at the same time"
 
 A space means that you have to press 2 keys successively
 e.g. "C-c C-x" means "press control-c then control-x"
----------------------------------------------------------------------------------------
 #+END_EXAMPLE
 
 Emacs has a lot of commands starting with C-x C-
