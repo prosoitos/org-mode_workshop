@@ -218,10 +218,10 @@ This is what an R code block looks like for instance:
 #+BEGIN_SRC R
 
 adult_dotplot <-
-    ggplot(adult, aes(mass))+
-    geom_dotplot()+
-    ggtitle("Mass of adult Tuamotu Sandpipers")+
-    xlab("Mass (g)")+
+    ggplot(adult, aes(mass)) +
+    geom_dotplot() +
+    ggtitle("Mass of adult Tuamotu Sandpipers") +
+    xlab("Mass (g)") +
     theme_classic()
 
 adult_dotplot
@@ -230,7 +230,7 @@ adult_dotplot
 
 
 
-(of course there are snippets that make it as easy as 2 keystrokes to create the codeblock start and end lines).
+(Of course there are snippets that make it as easy as 2 keystrokes to create the codeblock start and end lines).
 
 Codeblocks can be executed and you have a lot of control about what is exported when you covert your code to pdf, html, etc. (the code alone or the code and its output or just the output or nothing at all, etc.). 
 
