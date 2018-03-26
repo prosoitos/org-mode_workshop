@@ -12,7 +12,7 @@
 
 * Installation
 
-You need emacs (see https://prosoitos.github.io/workshop_intro-to-emacs/ for installation).
+You need emacs (see [[https://prosoitos.github.io/workshop_intro-to-emacs/][my previous workshop]] for installation).
 
 Org-mode comes with emacs so you don't need to install anything else.
 
@@ -22,7 +22,7 @@ Org-mode comes with emacs so you don't need to install anything else.
 
 Org is an emacs major mode created by Carsten Dominik in 2003 and currently maintained by Bastien Guerry. It enjoys a huge popularity and hordes of developers keep growing it into a more and more powerful tool.
 
-Here is a great description from http://orgmode.org/manual/Summary.html:
+Here is a great description from [[http://orgmode.org/manual/Summary.html][the org mode manual]]:
 
 #+BEGIN_QUOTE
 @@html:<div align="justify">@@"Org is a mode for keeping notes, maintaining TODO lists, and project planning with a fast and effective plain-text system. It also is an authoring system with unique support for literate programming and reproducible research.
@@ -42,7 +42,7 @@ All of this is achieved with strictly plain text files, the most portable and fu
 
 #+HTML: <br>
 
-In one hour, I will barely scratch the surface of org-mode's capabilities. For more information, check its manual: http://orgmode.org/manual/. The good thing is that you can start taking advantage of its simple features right from the beginning.
+In one hour, I will barely scratch the surface of org-mode's capabilities. For more information, check its [[http://orgmode.org/manual/][manual]]. The good thing is that you can start taking advantage of its simple features right from the beginning.
 
 #+HTML: <br>
 
@@ -150,7 +150,7 @@ Finally, cycle through the various visibility (only the overview, the whole tree
 
 There are also commands to kill, copy, yank, duplicate, etc. sections or headers with their entire subtrees. Others to jump around from one header to another. And so many more.
 
-You can have a look here for more information: http://orgmode.org/manual/Structure-editing.html#Structure-editing
+You can have a look at [[http://orgmode.org/manual/Structure-editing.html#Structure-editing][the org manual]] for more information:
 
 #+HTML: <br>
 
@@ -158,7 +158,7 @@ You can have a look here for more information: http://orgmode.org/manual/Structu
 
 Starting a line with "-", "+" or a number/letter followed by "." or ")"  will start a list. New items can be added with M-<RET> and all items can also be easily moved up/down, promoted/demoted, renumbered, have their list type changed (from "-" to numbers or letters) and so much more.
 
-Have a look here for more information on lists: http://orgmode.org/manual/Plain-lists.html
+Here again, the [[http://orgmode.org/manual/Plain-lists.html][org manual]] has a lot of additional information.
 
 #+HTML: <br>
 
@@ -240,4 +240,4 @@ This is very similar to RMarkdown. Except that you can also embed latex codes, p
 #+HTML: <br>
 #+HTML: <br>
 
-@@html:<div style="font-size: 90%; background-color: #eee8d5; border: 1pt solid #93a1a1">@@This page was created using a modified version of a css style by Thomas Frössman (itself based on the solarized color theme from Ethan Schoonover), as well as parts of a modified version of the worg css stylesheet for the table of contents@@html:</div>@@
+@@html:<div style="font-size: 80%; background-color: #eee8d5; border: 1pt solid #c9cfcf; margin: 20px; padding: 5px 10px;  border-radius: 5px; line-height: 18px">@@This page was inspired by a style from Thomas Frössman (itself based on the solarized color theme from Ethan Schoonover). The table of contents uses parts of a modified version of the worg css.@@html:</div>@@

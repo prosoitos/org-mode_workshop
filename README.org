@@ -36,9 +36,9 @@ This workshop will introduce you to some of the many functionalities of this *re
 
 * Installing emacs
 
-You will need to have emacs installed on your machine. Read through these [[https://github.com/prosoitos/workshop_intro-to-emacs][instructions]] before coming to the workshop.
+For this workshop, you will need to have emacs installed on your machine. Instructions can be found on [[https://github.com/prosoitos/workshop_intro-to-emacs][my previous workshop]].
 Org-mode comes with emacs, so you don't have anything else to install for this workshop.
 
 * Workshop content
 
-The content of the workshop is available [[https://github.com/prosoitos/workshop_intro-to-emacs][here]].
+The content of the workshop is available [[https://prosoitos.github.io/workshop_intro-to-org-mode/][here]].
