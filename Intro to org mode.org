@@ -16,8 +16,6 @@ You need emacs (see [[https://prosoitos.github.io/workshop_intro-to-emacs/][my p
 
 Org-mode comes with emacs so you don't need to install anything else.
 
-#+HTML: <br>
-
 * What is org mode?
 
 Org is an emacs major mode created by Carsten Dominik in 2003 and currently maintained by Bastien Guerry. It enjoys a huge popularity and hordes of developers keep growing it into a more and more powerful tool.
@@ -40,23 +38,15 @@ Org keeps simple things simple. When first fired up, it should feel like a strai
 All of this is achieved with strictly plain text files, the most portable and future-proof file format. Org runs in Emacs. Emacs is one of the most widely ported programs, so that Org mode is available on every major platform."@@html:</div>@@
 #+END_QUOTE
 
-#+HTML: <br>
-
 In one hour, I will barely scratch the surface of org-mode's capabilities. For more information, check its [[http://orgmode.org/manual/][manual]]. The good thing is that you can start taking advantage of its simple features right from the beginning.
-
-#+HTML: <br>
 
 * Demo of some of org mode's uses
 
 I will very quickly show you a few of the things that I do in org mode.
 
-#+HTML: <br>
-
 And now...
 
 @@html:<font size="6">@@Let's play with org mode!!!@@html:</font>@@
-
-#+HTML: <br>
 
 * Basics of org mode
 
@@ -79,8 +69,6 @@ Emacs has a lot of commands starting with C-x C-
 (e.g. C-x C-f to "find" a file, C-x C-s to "save" a file, C-x C-c to "close" a session).
 
 Similarly, org mode has a lot of commands starting with C-c C-
-
-#+HTML: <br>
 
 * Header structure
 
@@ -116,8 +104,6 @@ M-S-<up>      move header up
 M-S-<down>    move header down
 #+END_EXAMPLE
 
-#+HTML: <br>
-
 ** Challenge 1
 
 #+BEGIN_EXAMPLE
@@ -152,23 +138,17 @@ There are also commands to kill, copy, yank, duplicate, etc. sections or headers
 
 You can have a look at [[http://orgmode.org/manual/Structure-editing.html#Structure-editing][the org manual]] for more information:
 
-#+HTML: <br>
-
 * Lists
 
 Starting a line with "-", "+" or a number/letter followed by "." or ")"  will start a list. New items can be added with M-<RET> and all items can also be easily moved up/down, promoted/demoted, renumbered, have their list type changed (from "-" to numbers or letters) and so much more.
 
 Here again, the [[http://orgmode.org/manual/Plain-lists.html][org manual]] has a lot of additional information.
 
-#+HTML: <br>
-
 ** Challenge 2
 
 #+BEGIN_EXAMPLE
 Using the link above for a list of keybindings, add a few list items in one section of my-draft.org and play with various commands (move your list items around, make subitems, etc.).
 #+END_EXAMPLE
-
-#+HTML: <br>
 
 * Tables
 
@@ -190,8 +170,6 @@ Et voilà!
 
 Now start filling in your table. TAB will move you horizontally and reformat the table while RET will move you vertically.
 
-#+HTML: <br>
-
 * Exporting
 
 Documents created in org mode can be exported in all sorts of formats (latex and then pdf, html, etc).
@@ -203,8 +181,6 @@ C-c C-e
 
 (The usual C-c org mode command and C-e as in "export")
 #+END_EXAMPLE
-
-#+HTML: <br>
 
 * Code blocks
 
@@ -237,7 +213,6 @@ Codeblocks can be executed and you have a lot of control about what is exported 
 This is very similar to RMarkdown. Except that you can also embed latex codes, python codes, html codes, etc. And you can enjoy the endless functionalities of org mode...
 #+END_EXAMPLE
 
-#+HTML: <br>
 #+HTML: <br>
 
 @@html:<div style="font-size: 80%; background-color: #eee8d5; border: 1pt solid #c9cfcf; margin: 20px; padding: 5px 10px;  border-radius: 5px; line-height: 18px">@@This page was inspired by a style from Thomas Frössman (itself based on the solarized color theme from Ethan Schoonover). The table of contents uses parts of a modified version of the worg css.@@html:</div>@@
