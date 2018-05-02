@@ -43,4 +43,4 @@ Org-mode comes with emacs, so you don't have anything else to install for this w
 
 * Workshop content
 
-The content of the workshop is available [[https://prosoitos.github.io/workshop_intro-to-org-mode/][here]].
+The content of the workshop is available [[https://prosoitos.github.io/org-mode_workshop/][here]].
